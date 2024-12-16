@@ -1,3 +1,5 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 CREATE TYPE "public"."drivers_status_enum" AS ENUM('Available', 'Unavailable');
 CREATE TABLE "drivers" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "status" "public"."drivers_status_enum" NOT NULL DEFAULT 'Available', "personId" uuid, CONSTRAINT "REL_bffacbd6aa6409e21c2e63e993" UNIQUE ("personId"), CONSTRAINT "PK_92ab3fb69e566d3eb0cae896047" PRIMARY KEY ("id"));
 CREATE TABLE "invoices" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "distanceInKilometer" numeric(10,6) NOT NULL, "issueDate" TIMESTAMP WITH TIME ZONE NOT NULL, "tripId" uuid, CONSTRAINT "REL_829f1794155ac603a00fc753f3" UNIQUE ("tripId"), CONSTRAINT "PK_668cef7c22a427fd822cc1be3ce" PRIMARY KEY ("id"));
