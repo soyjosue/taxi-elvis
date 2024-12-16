@@ -88,6 +88,7 @@ src/
 test/                    # Testing
 ├── unit/                # Pruebas unitarias.
 dbScripts /              # Scripts de base de datos
+docs /                   # Documentación (Se encuentra el archivo de Insomnia con los diferentes endpoints).
 ```
 
 ## Pruebas
